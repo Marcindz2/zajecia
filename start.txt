@@ -1,0 +1,12 @@
+ Volume in drive H is New Disk
+ Volume Serial Number is 4681-0865
+
+ Directory of H:\integracjaSystemow
+
+27.02.2025  10:19    <DIR>          .
+27.02.2025  10:14    <DIR>          ..
+27.02.2025  10:19    <DIR>          lab1
+27.02.2025  10:19                 0 start.txt
+27.02.2025  10:19    <DIR>          zajecia
+               1 File(s)              0 bytes
+               4 Dir(s)  1ÿ685ÿ841ÿ682ÿ432 bytes free
