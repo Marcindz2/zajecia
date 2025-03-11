@@ -8,13 +8,17 @@
 def szukanie(ciag1,ciag2 )->str:
     indeksy=[]
     podzial=ciag1.split(ciag2)
-    for i in range(len(podzial)):
-        indeksy.append(indeksy[i]+len(ciag2))
+    print(podzial)
+    print(len(podzial)-1)
+    indeks = 0
+    for i in range(len(podzial) - 1):  
+        indeks += len(podzial[i])  
+        indeksy.append(indeks)  
+        indeks += len(podzial) 
     return indeksy
 
-
 if __name__ == '__main__':
-    pelny = 'piotr karol adam karol adam'#input('podaj pelny ciag: ')
+    pelny = 'piotr karol adam karol adam karol'#input('podaj pelny ciag: ')
     szukany = 'adam'#input('podaj szukany ciag: ')
 
     
