@@ -48,24 +48,44 @@ Stwórz klasy Vehicle i Car z polami nazwa, rok_produkcji i przebieg oraz metoda
 Zadanie 10
 Napisz program, który korzystająć z metody chr() wygeneruje łańcuch znakowy z alfabetem, czyli 'abc....xyz'. Do pliku alfabet1-numeralbumu.txt zapisz wygenerowany łańcuch znakowy, a do pliku alfabet2-numeralbumu.txt zapisz litery z ww. łańcucha znakowego, tylko że każda litera ma się znaleźć w osobnej linii w pliku.
 Hint: oprócz funkcji write() skorzystaj również z menadżera kontekstu with, żeby nie zapomnieć o zamknięciu pliku.
+<a href="skrypt10-25087.py">skrypt10-25087.py</a>
 
+Zadanie 11
 Odwrócić sentencję podaną przez użytkownika.
+<a href="skrypt11-25087.py">skrypt11-25087.py</a>
 
+Zadanie 12
 Zamienić wszystkie litery o na 0, e na 3, i na 1, a na 4 w podanej przez użytkownika sentencji.
+<a href="skrypt12-25087.py">skrypt12-25087.py</a>
 
+Zadanie 13
 Używając pętli wyświetl liczby w przedziale od 1 do 50 oprócz liczb podzielnych przez 3.
+<a href="skrypt13-25087.py">skrypt13-25087.py</a>
 
+Zadanie 14
 Używając pętli wyświetl liczby w przedziale od 1 do 100 podzielne przez 3 i 4 oraz podaj ich liczbę.
+<a href="skrypt14-25087.py">skrypt14-25087.py</a>
 
+Zadanie 15
 Używając pętli dodawaj do wcześniej zadeklarowanej tabeli liczby z przedziału od 1 do 100, które są podzielne przez 3 lub podzielne przez 5.
+<a href="skrypt15-25087.py">skrypt15-25087.py</a>
 
+Zadanie 16
 Napisz prostą funkcję o nazwie potega(), przyjmującą jeden argument, podnoszącą podaną liczbę do trzeciej potęgi.
+<a href="skrypt16-25087.py">skrypt16-25087.py</a>
 
+Zadanie 17
 Stwórz klasę o nazwie Dog, która będzie posiadała zmienne takie jak: name, age, coat_color. Dodatkowo klasa posiada funkcje sound(), po wywołaniu której wypisywany jest tekst: {name} is barking! Stworzyć 3 obiekty klasy Dog.
+<a href="skrypt17-25087.py">skrypt17-25087.py</a>
 
+Zadanie 18
 Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawanie, odejmowanie, dzielenie, mnożenie oraz modulo. W pliku main.py zaimportować plik funkcje.py i wykorzystać zaimportowane funkcje na przykładowych wartościach.
+<a href="0">skrypt18-25087.py</a>
 
+Zadanie 19
 Sprawdź czy wyraz bądź zdanie podane przez użytkownika jest palindromem.
+<a href="skrypt19-25087.py">skrypt19-25087.py</a>
+
 
 Prosta gra, program generuje losową liczbę od 1 do 100, użytkownik ma odgadnąć liczbę, jeżeli nie trafi ma zostać wyświetlona podpowiedź czy za duża czy za mała liczba.
 
