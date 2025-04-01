@@ -80,20 +80,27 @@ Stwórz klasę o nazwie Dog, która będzie posiadała zmienne takie jak: name, 
 
 Zadanie 18
 Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawanie, odejmowanie, dzielenie, mnożenie oraz modulo. W pliku main.py zaimportować plik funkcje.py i wykorzystać zaimportowane funkcje na przykładowych wartościach.
-<a href="0">skrypt18-25087.py</a>
+<a href="skrypt18-25087.py">skrypt18-25087.py</a>
 
 Zadanie 19
 Sprawdź czy wyraz bądź zdanie podane przez użytkownika jest palindromem.
 <a href="skrypt19-25087.py">skrypt19-25087.py</a>
 
-
+Zadanie 20
 Prosta gra, program generuje losową liczbę od 1 do 100, użytkownik ma odgadnąć liczbę, jeżeli nie trafi ma zostać wyświetlona podpowiedź czy za duża czy za mała liczba.
+<a href="skrypt20-25087.py">skrypt20-25087.py</a>
 
+Zadanie 21
 Dziedziczenie klas. Klasa Animal ma zawierać atrybuty takie jak name, age, sex oraz metodę sound(). Klasy Dog, Cat oraz Fox dziedziczą po klasie Animal oraz nadpisują funkcje sound() odpowiednimi dźwiękami, dodatkowo klasy Dog oraz Cat posiadają atrybut breed.
+<a href="skrypt21-25087.py">skrypt21-25087.py</a>
 
+Zadanie 22
 Należy wykorzystać plik wordlist_10000.txt i stworzyć funkcję wyszukującą najdłuższy wyraz w tym pliku oraz drugą funkcję, która wyszuka wyrazy o długości 10.
+<a href="skrypt22-25087.py">skrypt22-25087.py</a>
 
+Zadanie 23
 Za pomocą pętli stworzyć 1000 losowych 6 znakowych wyrazów [A-Z][a-z][0-9] i zapisać je do pliku passwords.txt.
+<a href="skrypt23-25087.py">skrypt23-25087.py</a>
 
 Napisać funkcję tworzącą plik pc.csv. Pierwszy wiersz ma zawierać nazwy kolumn: pc_name, ip. Nazwy komputerów mają zaczynać się literą P oraz 4 oktetem adresu ip. Adresy zaczynają się od 172.30.2.1 do 172.30.2.100. Plik csv ma być rozdzielany przecinkami.
 
