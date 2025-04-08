@@ -102,8 +102,14 @@ Zadanie 23
 Za pomocą pętli stworzyć 1000 losowych 6 znakowych wyrazów [A-Z][a-z][0-9] i zapisać je do pliku passwords.txt.
 <a href="skrypt23-25087.py">skrypt23-25087.py</a>
 
+Zadanie 24
 Napisać funkcję tworzącą plik pc.csv. Pierwszy wiersz ma zawierać nazwy kolumn: pc_name, ip. Nazwy komputerów mają zaczynać się literą P oraz 4 oktetem adresu ip. Adresy zaczynają się od 172.30.2.1 do 172.30.2.100. Plik csv ma być rozdzielany przecinkami.
+<a href="skrypt24-25087.py">skrypt24-25087.py</a>
 
+Zadanie 25
 Za pomocą pakietu do web-scrappingu, np.beautifulsoup lub jsoup, zapisać do tablicy wszystkie hiperłącza występujące na wybranej przez siebie stronie.
+<a href="skrypt25-25087.py">skrypt25-25087.py</a>
 
+Zadanie 26
 Za pomocą webscrappera pobrać wszystkie oferty domów z podanego linku(https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/pomorskie/gdynia/gdynia/gdynia?priceMax=600000&viewType=listing), każda oferta ma być obiektem klasy Home, który posiada atrybuty takie jak header_name, price, price_for_m2. Wszystkie obiekty zapisać do słownika oraz do pliku home.csv.
+<a href="skrypt26-25087.py">skrypt26-25087.py</a>

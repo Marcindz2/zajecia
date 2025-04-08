@@ -4,10 +4,23 @@
 import random 
 import string
 
+
+    
+
+
 def plik():
     with open("wordlist_10000.txt",'r') as file:
-        for line in file
-        
+        longest=["",0]
+        tenlong=[]
+        for line in file:
+            word=line.strip()
+            length=len(word)
+            if(length==10):
+                tenlong.append(word)
+            if(length>longest[1]):
+                longest[0]=word
+                longest[1]=length
+        print(f"wyrazy o 10 znakach: {tenlong}, najdluzszy wyraz {longest}")
             
 
 
