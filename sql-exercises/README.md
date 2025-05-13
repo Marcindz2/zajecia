@@ -1,44 +1,113 @@
 
 Zadanie 1
+Write a SQL query to select the sex and body mass columns from the little_penguins in that order, sorted such that the largest body mass appears first.
 
-![excercise-01](./screenshots/ex-1-1.png)
+```select 
+    sex,body_mass_g 
+FROM little_penguins 
+order by body_mass_g desc
+```
+
+![excercise-1](./screenshots/ex-1-1.png)
 
 
 Zadanie 2
+Write a SQL query to select the islands and species from rows 50 to 60 inclusive of the penguins table. Your result should have 11 rows.
+```
+select 
+    island,species 
+FROM penguins 
+limit 10 OFFSET 50
+```
+![excercise-2-1](./screenshots/ex-2-1.png)
 
-<a href=""> </a>
+Modify your query to select distinct combinations of island and species from the same rows and compare the result to what you got in part 1.
+```
+select DISTINCT
+    island,species 
+FROM penguins 
+```
+![excercise-2-2](./screenshots/ex-2-2.png)
+
+
 
 Zadanie 3
-Napisz program, który szuka określonego ciągu znaków w łańcuchu znakowym i zwraca indeks pierwszego wystąpienia ciągu lub -1, gdy nie ma takiego ciągu.
-Hint: skorzystaj z funkcji find().
-<a href="skrypt3-25087.py" >skrypt3-25087.py </a>
+Write a query to select the body masses from penguins that are less than 3000.0 grams.
+```
+select body_mass_g from penguins WHERE body_mass_g<3000
+```
+![excercise-3-1](./screenshots/ex-3-1.png)
+
+Write another query to select the species and sex of penguins that weight less than 3000.0 grams. This shows that the columns displayed and those used in filtering are independent of each other.
+```
+select species,sex from penguins WHERE body_mass_g<3000
+```
+![excercise-3-2](./screenshots/ex-3-2.png)
 
 Zadanie 4
-Napisz program, który szuka określonego ciągu znaków w łańcuchu znakowym i zwraca indeksy wszystkich wystąpień ciągu lub -1, gdy nie ma takiego ciągu.
-Hint: skorzystaj z funkcji split().
-<a href="skrypt4-25087.py" >skrypt4-25087.py </a>
+Use the not operator to select penguins that are not Gentoos.
+```
+select DISTINCT species from penguins WHERE species != 'Gentoo'
+```
+![excercise-4-1](./screenshots/ex-4-1.png)
+
+SQL's or is an inclusive or: it succeeds if either or both conditions are true. SQL does not provide a specific operator for exclusive or, which is true if either but not both conditions are true, but the same effect can be achieved using and, or, and not. Write a query to select penguins that are female or on Torgersen Island but not both.
+```
+select sex, island from penguins 
+WHERE (sex = 'FEMALE' AND island != 'Torgersen')
+   OR (island = 'Torgersen' AND sex != 'FEMALE');
+```
+![excercise-4-2](./screenshots/ex-4-2.png)
+
 
 Zadanie 5
-Napisz program (na dwa sposoby), który szuka pierwiastków liczb od 1 do 256 (włącznie) podzielnych bez reszty przez 2.
-Hint: skorzystaj z modułu math i z tzw. 'list comprehensions'.
-<a href="skrypt5-25087.py" >skrypt5-25087.py </a>
+A column called what_where that has the species and island of each penguin separated by a single space.
+```
+SELECT species|| ' ' || island AS what_where from penguins
+```
+![excercise-5-1](./screenshots/ex-5-1.png)
+
+A column called bill_ratio that has the ratio of bill length to bill depth.
+```
+SELECT bill_length_mm/bill_depth_mm AS bill_ratio from penguins
+```
+![excercise-5-2](./screenshots/ex-5-2.png)
 
 Zadanie 6
-Napisz program, który tworzy słownik o nazwie zawierającej Twój numer albumu.
-Kluczami powinny być liczby od 10 do 20, a wartościami pseudolosowe łańcuch znaków o długości 8.
-Hint: skorzystaj z modułów string i random.
-<a href="skrypt6-25087.py" >skrypt6-25087.py </a>
+Write a query to find penguins whose body mass is known but whose sex is not.
+```
+SELECT body_mass_g,sex  from penguins 
+where (sex is null) and (body_mass_g is not null)
+```
+![excercise-6-1](./screenshots/ex-6-1.png)
+
+
+Write another query to find penguins whose sex is known but whose body mass is not.
+```
+SELECT body_mass_g,sex  from penguins 
+where (sex is not null) and (body_mass_g is null)
+```
+![excercise-6-2](./screenshots/ex-6-2.png)
 
 Zadanie 7
-Stwórz folder utils, a w nim plik 'obliczenia.py', w którym należy zaimplementować cztery wybrane funkcje matematyczne z modułu math.
-Następnie należy utworzyć plik skrypt7-nr_albumu.py i zaimportować w nim ww. funkcje do obliczeń na przykładowych wartościach.
-<a href="skrypt7-25087.py" >skrypt7-25087.py </a>
+What is the average body mass of penguins that weight more than 3000.0 grams?
 
+```
+SELECT AVG(body_mass_g) AS average_mass
+FROM penguins
+WHERE body_mass_g > 3000.0;
+```
+![excercise-7-1](./screenshots/ex-7-1.png)
 
 Zadanie 8
-Napisz program, który generuje losowy ciąg znaków o długości 100, a następnie utwórz słownik którego kluczami będą unikalne znaki występujące w ciągu, a wartościami liczba ich wystąpień w ciągu znakowym. Utwórz listę, której każdy element to krotka (tupla), zawierająca kolejny klucz z ww. słownika i odpowiadającą mu wartość liczbową.
-Hint: skorzystaj z modułu collections i klasy Counter().
-<a href="skrypt8-25087.py">skrypt8-25087.py</a>
+Write a query that shows each distinct body mass in the penguin dataset and the number of penguins that weigh that much.
+```
+SELECT DISTINCT
+ body_mass_g, count(body_mass_g) as number_of_penguins
+FROM penguins
+group by body_mass_g
+```
+![excercise-8-1](./screenshots/ex-8-1.png)
 
 Zadanie 9
 Stwórz klasy Vehicle i Car z polami nazwa, rok_produkcji i przebieg oraz metodami is_old() i is_long_mileage(). Stwórz po jednym obiekcie dla każdej z klas oraz trzeci obiekt, gdzie klasa Car dziedziczy z klasy Vehicle. Dla każdego z obiektów wywołaj obie metody, co najmniej raz użyj dekoratora @property w każdym z trzech przypadków.
