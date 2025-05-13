@@ -31,35 +31,34 @@ def strona(url):
             cena=article.find('span',class_="css-2bt9f1 evk7nst0") 
             cenatext=cena.text
             #print(f"cena to: {cenatext} zł")
-            parametry=article.find('dl', class_="css-9q2yy4 e1nke57n1")
+            parametry=article.find('dl', class_="css-9q2yy4 eyjpr0t1")
             parametrytext=parametry.text
             result=re.split(r'Liczba pokoi|\s+pokojePowierzchnia|\s+m²Cena za metr kwadratowy|\s+zł/m²Piętro',parametrytext)
             #print(f'   ile pokoi: {result[1]} powierzchnia: {result[2]} cena za metr: {result[3]}')
             dom=home(nazwatext,cenatext,result[3])
             obiekty_home.append(dom)
-
-        
-        
-
-        
     else:
         print(f"blad: {response.status_code}")
+
+def plik(homes):
+    with open("home.csv",'w',newline="", encoding="utf-8") as file:
+        writer=csv.writer(file)
+        writer.writerow(['name','price','price/m2'])
+        for home in homes:
+            name=home.header_name
+            price=home.price
+            pricem2=home.price_for_m2
+            writer.writerow([name,price])
+
 
 if __name__ == '__main__':
     obiekty_home=[]
     # strona('https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/pomorskie/gdynia/gdynia/gdynia?priceMax=600000&viewType=listing')
     strona('https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/pomorskie/gdynia/gdynia/gdynia?priceMax=600000&viewType=listing&by=LATEST&direction=ASC')
-    for home in obiekty_home:
-        print(f" cena {home.price}")
-    # definitionlist = parse.find_all('dl')
-    #     for link in definitionlist:
-    #         hiperlacza.append(link)
-    #     print(hiperlacza)
-    # def plik():
-    # znaki=string.ascii_lowercase+string.ascii_uppercase+string.digits
-    # with open("password.txt",'w') as file:
-    #     for j in range(1000):
-    #         ciag1=""
-    #         for i in range(6):
-    #             ciag1+=random.choice(znaki)
-    #         file.write(f"{ciag1}\n")
+    plik(obiekty_home)
+    #for home in obiekty_home:
+        #print(f" nazwa: {home.header_name}, cena: {home.price},   cena za metr: {home.price_for_m2}")
+
+
+
+
