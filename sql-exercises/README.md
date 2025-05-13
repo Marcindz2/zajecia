@@ -1,7 +1,7 @@
 
 Zadanie 1
 
-(./screenshots/ex-1-1.png)
+![excercise-01](./screenshots/ex-1-1.png)
 
 
 Zadanie 2
