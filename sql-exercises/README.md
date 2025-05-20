@@ -110,74 +110,49 @@ group by body_mass_g
 ![excercise-8-1](./screenshots/ex-8-1.png)
 
 Zadanie 9
-Stwórz klasy Vehicle i Car z polami nazwa, rok_produkcji i przebieg oraz metodami is_old() i is_long_mileage(). Stwórz po jednym obiekcie dla każdej z klas oraz trzeci obiekt, gdzie klasa Car dziedziczy z klasy Vehicle. Dla każdego z obiektów wywołaj obie metody, co najmniej raz użyj dekoratora @property w każdym z trzech przypadków.
-<a href="skrypt9-25087.py">skrypt9-25087.py</a>
+```
+Write a query that uses filter to calculate the average body masses of heavy penguins (those over 4500 grams) and light penguins (those under 3500 grams) simultaneously. Is it possible to do this using where instead of filter?
+```
+![excercise-9-1](./screenshots/ex-9-1.png)
 
 Zadanie 10
-Napisz program, który korzystająć z metody chr() wygeneruje łańcuch znakowy z alfabetem, czyli 'abc....xyz'. Do pliku alfabet1-numeralbumu.txt zapisz wygenerowany łańcuch znakowy, a do pliku alfabet2-numeralbumu.txt zapisz litery z ww. łańcucha znakowego, tylko że każda litera ma się znaleźć w osobnej linii w pliku.
-Hint: oprócz funkcji write() skorzystaj również z menadżera kontekstu with, żeby nie zapomnieć o zamknięciu pliku.
-<a href="skrypt10-25087.py">skrypt10-25087.py</a>
+Using an in-memory database, define a table called notes with two text columns author and note and then add three or four rows. Use a query to check that the notes have been stored and that you can (for example) select by author name.
+![excercise-10-1](./screenshots/ex-10-1.png)
 
 Zadanie 11
-Odwrócić sentencję podaną przez użytkownika.
-<a href="skrypt11-25087.py">skrypt11-25087.py</a>
+Saving and restoring data as text:
+
+Re-create the notes table in an in-memory database and then use SQLite's .output and .dump commands to save the database to a file called notes.sql. Inspect the contents of this file: how has your data been stored?
+```
+.output notes.sql
+.dump
+```
+![excercise-11-1](./screenshots/ex-11-1.png)
+
+Start a fresh SQLite session and load notes.sql using the .read command. Inspect the database using .schema and select *: is everything as you expected?
+![excercise-11-2](./screenshots/ex-11-2.png)
+
+Saving and restoring data in binary format:
+
+Re-create the notes table in an in-memory database once again and use SQLite's .backup command to save it to a file called notes.db. Inspect this file using od -c notes.db or a text editor that can handle binary data: how has your data been stored?
+![excercise-11-3](./screenshots/ex-11-3.png)
+
+Start a fresh SQLite session and load notes.db using the .restore command. Inspect the database using .schema and select *: is everything as you expected?
+![excercise-11-4](./screenshots/ex-11-4.png)
+
 
 Zadanie 12
-Zamienić wszystkie litery o na 0, e na 3, i na 1, a na 4 w podanej przez użytkownika sentencji.
-<a href="skrypt12-25087.py">skrypt12-25087.py</a>
+Re-run the query shown above using where job = name instead of the full table.name notation. Is the shortened form easier or harder to read and more or less likely to cause errors?
+![excercise-12-1](./screenshots/ex-12-1.png)
+
+
 
 Zadanie 13
-Używając pętli wyświetl liczby w przedziale od 1 do 50 oprócz liczb podzielnych przez 3.
-<a href="skrypt13-25087.py">skrypt13-25087.py</a>
+Find the least time each person spent on any job. Your output should show that mik and po each spent 0.5 hours on some job. Can you find a way to show the name of the job as well using the SQL you have seen so far?
 
-Zadanie 14
-Używając pętli wyświetl liczby w przedziale od 1 do 100 podzielne przez 3 i 4 oraz podaj ich liczbę.
-<a href="skrypt14-25087.py">skrypt14-25087.py</a>
-
-Zadanie 15
-Używając pętli dodawaj do wcześniej zadeklarowanej tabeli liczby z przedziału od 1 do 100, które są podzielne przez 3 lub podzielne przez 5.
-<a href="skrypt15-25087.py">skrypt15-25087.py</a>
-
-Zadanie 16
-Napisz prostą funkcję o nazwie potega(), przyjmującą jeden argument, podnoszącą podaną liczbę do trzeciej potęgi.
-<a href="skrypt16-25087.py">skrypt16-25087.py</a>
-
-Zadanie 17
-Stwórz klasę o nazwie Dog, która będzie posiadała zmienne takie jak: name, age, coat_color. Dodatkowo klasa posiada funkcje sound(), po wywołaniu której wypisywany jest tekst: {name} is barking! Stworzyć 3 obiekty klasy Dog.
-<a href="skrypt17-25087.py">skrypt17-25087.py</a>
-
-Zadanie 18
-Stworzyć plik funkcje.py, w którym należy zaimplementować funkcję: dodawanie, odejmowanie, dzielenie, mnożenie oraz modulo. W pliku main.py zaimportować plik funkcje.py i wykorzystać zaimportowane funkcje na przykładowych wartościach.
-<a href="skrypt18-25087.py">skrypt18-25087.py</a>
-
-Zadanie 19
-Sprawdź czy wyraz bądź zdanie podane przez użytkownika jest palindromem.
-<a href="skrypt19-25087.py">skrypt19-25087.py</a>
-
-Zadanie 20
-Prosta gra, program generuje losową liczbę od 1 do 100, użytkownik ma odgadnąć liczbę, jeżeli nie trafi ma zostać wyświetlona podpowiedź czy za duża czy za mała liczba.
-<a href="skrypt20-25087.py">skrypt20-25087.py</a>
-
-Zadanie 21
-Dziedziczenie klas. Klasa Animal ma zawierać atrybuty takie jak name, age, sex oraz metodę sound(). Klasy Dog, Cat oraz Fox dziedziczą po klasie Animal oraz nadpisują funkcje sound() odpowiednimi dźwiękami, dodatkowo klasy Dog oraz Cat posiadają atrybut breed.
-<a href="skrypt21-25087.py">skrypt21-25087.py</a>
-
-Zadanie 22
-Należy wykorzystać plik wordlist_10000.txt i stworzyć funkcję wyszukującą najdłuższy wyraz w tym pliku oraz drugą funkcję, która wyszuka wyrazy o długości 10.
-<a href="skrypt22-25087.py">skrypt22-25087.py</a>
-
-Zadanie 23
-Za pomocą pętli stworzyć 1000 losowych 6 znakowych wyrazów [A-Z][a-z][0-9] i zapisać je do pliku passwords.txt.
-<a href="skrypt23-25087.py">skrypt23-25087.py</a>
-
-Zadanie 24
-Napisać funkcję tworzącą plik pc.csv. Pierwszy wiersz ma zawierać nazwy kolumn: pc_name, ip. Nazwy komputerów mają zaczynać się literą P oraz 4 oktetem adresu ip. Adresy zaczynają się od 172.30.2.1 do 172.30.2.100. Plik csv ma być rozdzielany przecinkami.
-<a href="skrypt24-25087.py">skrypt24-25087.py</a>
-
-Zadanie 25
-Za pomocą pakietu do web-scrappingu, np.beautifulsoup lub jsoup, zapisać do tablicy wszystkie hiperłącza występujące na wybranej przez siebie stronie.
-<a href="skrypt25-25087.py">skrypt25-25087.py</a>
-
-Zadanie 26
-Za pomocą webscrappera pobrać wszystkie oferty domów z podanego linku(https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/pomorskie/gdynia/gdynia/gdynia?priceMax=600000&viewType=listing), każda oferta ma być obiektem klasy Home, który posiada atrybuty takie jak header_name, price, price_for_m2. Wszystkie obiekty zapisać do słownika oraz do pliku home.csv.
-<a href="skrypt26-25087.py">skrypt26-25087.py</a>
+```
+select work.person, min(job.billable), job.name
+from work join job on work.job=job.name
+group by work.person;
+```
+![excercise-13-1](./screenshots/ex-13-1.png)
